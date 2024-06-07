@@ -1,10 +1,9 @@
+import Header from "./components/Header";
+
 function App() {
   return (
     <>
-      <header id="header">
-        <img src="investment-calculator-logo.png" alt="a bag of money" />
-        <h1>React Investment Calculator</h1>
-      </header>
+      <Header />
       <main id="user-input" className="input-group">
         <div>
           <label htmlFor="initial-investment">
