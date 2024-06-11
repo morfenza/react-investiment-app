@@ -1,11 +1,12 @@
 export default function UserInput({ onInputFn }) {
   return (
-    <main id="user-input" className="input-group">
+    <section id="user-input" className="input-group">
       <div>
         <label>
           Initial Investiment
           <input
             type="number"
+            required
             onChange={(event) =>
               onInputFn("initialInvestment", event.target.valueAsNumber)
             }
@@ -15,6 +16,7 @@ export default function UserInput({ onInputFn }) {
           Expected Return
           <input
             type="number"
+            required
             onChange={(event) =>
               onInputFn("expectedReturn", event.target.valueAsNumber)
             }
@@ -26,6 +28,7 @@ export default function UserInput({ onInputFn }) {
           Annual Investiment
           <input
             type="number"
+            required
             onChange={(event) =>
               onInputFn("annualInvestment", event.target.valueAsNumber)
             }
@@ -35,12 +38,13 @@ export default function UserInput({ onInputFn }) {
           Duration
           <input
             type="number"
+            required
             onChange={(event) =>
               onInputFn("duration", event.target.valueAsNumber)
             }
           />
         </label>
       </div>
-    </main>
+    </section>
   );
 }

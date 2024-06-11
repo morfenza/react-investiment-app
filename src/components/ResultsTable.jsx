@@ -1,7 +1,7 @@
 import { calculateInvestmentResults, formatter } from "../util/investment";
 
-export default function ResultsTable({ userInputResults }) {
-  let derivedResults = calculateInvestmentResults(userInputResults);
+export default function ResultsTable({ userInput }) {
+  let derivedResults = calculateInvestmentResults(userInput);
 
   return (
     <table id="result">

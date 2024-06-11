@@ -5,16 +5,16 @@ import ResultsTable from "./components/ResultsTable";
 import UserInput from "./components/UserInput";
 
 function App() {
-  const [results, setResults] = useState([]);
+  const [userInput, setUserInput] = useState([]);
 
   function handleUserInput(key, value) {
     if (key === 'duration' && value < 1) {
       return alert("Invalid Duration")
     }
 
-    setResults((previousResult) => (
+    setUserInput((previousUserInput) => (
       {
-      ...previousResult,
+      ...previousUserInput,
       [key]: value,
     }));
   }
@@ -23,7 +23,7 @@ function App() {
     <>
       <Header />
       <UserInput onInputFn={handleUserInput} />
-      <ResultsTable userInputResults={results}/>
+      <ResultsTable userInput={userInput}/>
     </>
   );
 }
