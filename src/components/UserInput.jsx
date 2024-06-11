@@ -2,23 +2,19 @@ export default function UserInput({ onInputFn }) {
   return (
     <main id="user-input" className="input-group">
       <div>
-        <label htmlFor="initial-investment">
+        <label>
           Initial Investiment
           <input
             type="number"
-            name="initial-investment"
-            id="initial-investment"
             onChange={(event) =>
               onInputFn("initialInvestment", event.target.valueAsNumber)
             }
           />
         </label>
-        <label htmlFor="expected-return">
+        <label>
           Expected Return
           <input
             type="number"
-            name="expected-return"
-            id="expected-return"
             onChange={(event) =>
               onInputFn("expectedReturn", event.target.valueAsNumber)
             }
@@ -26,24 +22,22 @@ export default function UserInput({ onInputFn }) {
         </label>
       </div>
       <div>
-        <label htmlFor="annual-investment">
+        <label>
           Annual Investiment
           <input
             type="number"
-            name="annual-investment"
-            id="annual-investment"
             onChange={(event) =>
               onInputFn("annualInvestment", event.target.valueAsNumber)
             }
           />
         </label>
-        <label htmlFor="duration">
+        <label>
           Duration
           <input
             type="number"
-            name="duration"
-            id="duration"
-            onChange={(event) => onInputFn("duration", event.target.valueAsNumber)}
+            onChange={(event) =>
+              onInputFn("duration", event.target.valueAsNumber)
+            }
           />
         </label>
       </div>

@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import ResultsTable from "./components/ResultsTable";
 import UserInput from "./components/UserInput";
 
-
 function App() {
   const [results, setResults] = useState([]);
 
@@ -20,13 +19,11 @@ function App() {
     }));
   }
 
-  console.log(results);
-
   return (
     <>
       <Header />
       <UserInput onInputFn={handleUserInput} />
-      <ResultsTable investmentResults={results}/>
+      <ResultsTable userInputResults={results}/>
     </>
   );
 }
