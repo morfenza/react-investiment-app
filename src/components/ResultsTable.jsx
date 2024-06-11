@@ -1,4 +1,10 @@
-export default function ResultsTable() {
+import { calculateInvestmentResults, formatter } from "../util/investment";
+
+export default function ResultsTable({ investmentResults }) {
+  let derivedResults = calculateInvestmentResults(investmentResults);
+
+  console.log(derivedResults)
+
   return (
     <table id="result">
       <thead>
@@ -11,11 +17,15 @@ export default function ResultsTable() {
         </tr>
       </thead>
       <tbody>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
+        {derivedResults.map((result, resultIndex) => (
+          <tr key={`${result}-${resultIndex}`}>
+            <th>{result.year}</th>
+            <th>{formatter.format(result.valueEndOfYear)}</th>
+            <th>{formatter.format(result.interest)}</th>
+            <th>{formatter.format(result.annualInvestment)}</th>
+            <th>{formatter.format(result.investedCapital)}</th>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

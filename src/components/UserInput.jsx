@@ -9,7 +9,7 @@ export default function UserInput({ onInputFn }) {
             name="initial-investment"
             id="initial-investment"
             onChange={(event) =>
-              onInputFn("initial-investiment", event.target.value)
+              onInputFn("initialInvestment", event.target.valueAsNumber)
             }
           />
         </label>
@@ -20,7 +20,7 @@ export default function UserInput({ onInputFn }) {
             name="expected-return"
             id="expected-return"
             onChange={(event) =>
-              onInputFn("expected-return", event.target.value)
+              onInputFn("expectedReturn", event.target.valueAsNumber)
             }
           />
         </label>
@@ -33,7 +33,7 @@ export default function UserInput({ onInputFn }) {
             name="annual-investment"
             id="annual-investment"
             onChange={(event) =>
-              onInputFn("annual-investment", event.target.value)
+              onInputFn("annualInvestment", event.target.valueAsNumber)
             }
           />
         </label>
@@ -43,7 +43,7 @@ export default function UserInput({ onInputFn }) {
             type="number"
             name="duration"
             id="duration"
-            onChange={(event) => onInputFn("duration", event.target.value)}
+            onChange={(event) => onInputFn("duration", event.target.valueAsNumber)}
           />
         </label>
       </div>
