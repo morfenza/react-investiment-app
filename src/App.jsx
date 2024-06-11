@@ -1,12 +1,25 @@
+import { useState } from "react";
+
 import Header from "./components/Header";
 import ResultsTable from "./components/ResultsTable";
 import UserInput from "./components/UserInput";
 
 function App() {
+  const [results, setResults] = useState([]);
+
+  function handleUserInput(key, value) {
+    setResults((previousResult) => ({
+      ...previousResult,
+      [key]: value,
+    }));
+  }
+
+  console.log(results);
+
   return (
     <>
       <Header />
-      <UserInput />
+      <UserInput onInputFn={handleUserInput} />
       <ResultsTable />
     </>
   );
