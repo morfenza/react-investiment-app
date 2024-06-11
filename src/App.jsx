@@ -5,15 +5,19 @@ import ResultsTable from "./components/ResultsTable";
 import UserInput from "./components/UserInput";
 
 function App() {
-  const [userInput, setUserInput] = useState([]);
+  const [userInput, setUserInput] = useState({
+    initialInvestment: 10000,
+    annualInvestment: 1200,
+    expectedReturn: 6,
+    duration: 10,
+  });
 
   function handleUserInput(key, value) {
-    if (key === 'duration' && value < 1) {
-      return alert("Invalid Duration")
+    if (key === "duration" && value < 1) {
+      return alert("Invalid Duration");
     }
 
-    setUserInput((previousUserInput) => (
-      {
+    setUserInput((previousUserInput) => ({
       ...previousUserInput,
       [key]: value,
     }));
@@ -22,8 +26,8 @@ function App() {
   return (
     <>
       <Header />
-      <UserInput onInputFn={handleUserInput} />
-      <ResultsTable userInput={userInput}/>
+      <UserInput userInput={userInput} onInputFn={handleUserInput} />
+      <ResultsTable userInput={userInput} />
     </>
   );
 }
